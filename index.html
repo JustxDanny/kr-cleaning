@@ -1,1 +1,888 @@
-<!doctype html><meta charset=utf-8><title>KR Cleaning</title><p>Готовим страницу.</p>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клининговая компания в Екатеринбурге | Уборка квартир, коттеджей и офисов | KR Cleaning</title>
+  <meta name="description" content="KR Cleaning в Екатеринбурге: генеральная уборка, уборка после ремонта и химчистка. Бесплатный выезд оценщика, работаем 24/7.">
+  <!-- noindex, nofollow удаляется при публикации рабочего сайта. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;display=swap">
+  <style>
+    /* topbar, siteheader, hero, stats, napravleniya, uslugi, ceny, calc, chto-vhodit, klinery, do-posle, keysy, obekty, otzyvy, kak-rabotaem, pochemu, faq, zayavka, kontakty */
+    :root {
+      --navy-900: #091230; --navy-700: #132460; --navy-500: #203566;
+      --blue-600: #00419C; --red: #E21C21; --red-700: #C4161B;
+      --bg-blue: #E5EBFF; --bg-soft: #F2F5FF; --white: #FFFFFF;
+      --text: #111111; --muted: #454545; --border: #DDE3F5;
+      --grime-1: #8891A8; --grime-2: #B6BECD;
+      --radius-sm: 10px; --radius: 16px; --radius-lg: 20px; --radius-pill: 999px;
+      --shadow-card: 0 16px 42px rgba(19, 36, 96, .14);
+      --shadow-soft: 0 8px 24px rgba(19, 36, 96, .09);
+      --container: 1180px; --section-pad: 64px;
+      --ease-out: cubic-bezier(.16, 1, .3, 1); --ease-smooth: cubic-bezier(.4, 0, .2, 1);
+      --duration-fast: 150ms; --duration: 200ms;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--white); }
+    body { margin: 0; min-width: 0; overflow-x: hidden; color: var(--text); background: var(--white); font-family: "Open Sans", sans-serif; font-size: 16px; line-height: 1.55; }
+    button, input { font: inherit; } button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; } button { color: inherit; } svg { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; } h1, h2, h3 { color: var(--navy-700); font-family: Montserrat, sans-serif; text-wrap: balance; }
+    h3 { font-size: 20px; line-height: 1.25; } :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+    [hidden] { display: none; }
+    .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 20px; }
+    .s { position: relative; padding-block: var(--section-pad); }
+    .s--white { color: var(--text); background: var(--white); }
+    .s--blue { color: var(--text); background: var(--bg-blue); }
+    .s--navy { color: var(--white); background: var(--navy-900); }
+    .s--navy h2, .s--navy h3, .s--navy a { color: var(--white); }
+    .s__head { max-width: 760px; margin-bottom: 32px; }
+    .s__title { margin-bottom: 12px; font-size: clamp(28px, 7vw, 42px); font-weight: 800; line-height: 1.1; }
+    .s__lead { margin-bottom: 0; color: var(--muted); font-size: 17px; } .s--navy .s__lead { color: var(--border); }
+    .grid { display: grid; gap: 16px; }
+    .card { min-width: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow-soft); }
+    .btn { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; border-radius: var(--radius-pill); padding: 10px 18px; cursor: pointer; font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700; line-height: 1.2; text-align: center; transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-smooth), border-color var(--duration-fast) var(--ease-smooth); }
+    .btn:hover { transform: translateY(-1px); } .btn:active { transform: scale(.98); }
+    .btn--red { border-color: var(--red); color: var(--white); background: var(--red); }
+    .btn--red:hover { border-color: var(--red-700); background: var(--red-700); }
+    .btn--ghost { border-color: var(--navy-700); color: var(--navy-700); background: transparent; }
+    .btn--ghost:hover { background: var(--bg-soft); } .s--navy .btn--ghost { border-color: var(--white); color: var(--white); }
+    .badge { display: inline-flex; min-height: 32px; align-items: center; border-radius: var(--radius-pill); padding: 6px 11px; color: var(--navy-700); background: var(--bg-soft); font-size: 12px; font-weight: 700; }
+    .stars { color: var(--red); font-size: 18px; letter-spacing: 2px; white-space: nowrap; }
+    .tick { width: 20px; height: 20px; flex: 0 0 20px; color: var(--red); }
+    .note { margin-top: 16px; border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 10px 12px; color: var(--muted); background: var(--bg-soft); font-size: 11px; }
+    .tabs { display: flex; min-height: 44px; gap: 6px; }
+    .tabs--scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+    .tab { min-height: 44px; flex: 0 0 auto; border: 0; border-bottom: 3px solid transparent; padding: 8px 14px; cursor: pointer; color: var(--muted); background: transparent; font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .tab[aria-selected="true"] { border-bottom-color: var(--red); color: var(--navy-700); }
+    .form-row { display: grid; gap: 10px; }
+    .field { width: 100%; min-width: 0; min-height: 48px; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 10px 16px; color: var(--text); background: var(--white); font-size: 16px; }
+    .form-note { margin: 8px 0 0; color: var(--muted); font-size: 11px; }
+    .form-status { border-left: 3px solid var(--red); border-radius: var(--radius-sm); padding: 12px; color: var(--navy-700); background: var(--white); font-weight: 700; }
+    .icon-box { display: grid; width: 48px; height: 48px; place-items: center; border-radius: var(--radius-sm); color: var(--red); background: var(--bg-soft); }
+    .icon-box svg { width: 28px; height: 28px; }
+    .eyebrow { margin-bottom: 14px; color: var(--red); font-family: Montserrat, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+    [id="topbar"] { display: none; padding-block: 0; font-size: 12px; }
+    .topbar__inner { min-height: 36px; align-items: center; justify-content: space-between; gap: 20px; }
+    .topbar__group { display: flex; flex-wrap: wrap; gap: 16px; } .topbar__inner a:hover { color: var(--border); }
+    [id="siteheader"] { position: sticky; top: 0; z-index: 50; padding-block: 0; border-bottom: 1px solid var(--border); }
+    .header__inner { display: grid; min-height: 72px; grid-template-columns: 1fr auto; align-items: center; gap: 12px; }
+    .logo { display: inline-flex; width: fit-content; align-items: center; gap: 10px; }
+    .logo__mark { width: 50px; height: 50px; } .logo__word { font-family: Montserrat, sans-serif; font-size: 20px; font-weight: 800; }
+    .logo__kr { color: var(--red); } .logo__cleaning { color: var(--navy-700); } .header__desktop { display: none; }
+    .nav-toggle { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; color: var(--navy-700); background: var(--white); }
+    .nav-toggle svg { width: 24px; }
+    .mobile-nav { position: absolute; inset-inline: 0; top: 100%; border-bottom: 1px solid var(--border); padding: 8px 20px 16px; background: var(--white); box-shadow: var(--shadow-soft); }
+    .mobile-nav a { display: flex; width: 100%; min-height: 44px; align-items: center; border-bottom: 1px solid var(--border); color: var(--navy-700); font-weight: 700; }
+    .mobile-nav .btn { margin-top: 10px; color: var(--white); }
+    [id="hero"] { overflow: hidden; padding-block: 48px; } .hero__grid { display: grid; gap: 32px; }
+    .hero__copy { position: relative; z-index: 2; }
+    .hero__copy h1 { max-width: 760px; margin-bottom: 18px; overflow-wrap: break-word; color: var(--navy-700); font-size: clamp(28px, 6vw, 56px); font-weight: 800; line-height: 1.05; }
+    .hero__lead { max-width: 660px; margin-bottom: 22px; } .hero__form { max-width: 620px; }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .hero__visual { position: relative; display: grid; min-width: 0; place-items: center; }
+    .hero__bubbles { position: absolute; width: 115%; max-width: none; color: var(--blue-600); }
+    .rating-card { position: relative; z-index: 1; width: min(100%, 430px); border: 0; border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-card); }
+    .rating-row { display: flex; min-height: 56px; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--border); font-family: Montserrat, sans-serif; font-weight: 800; }
+    .rating-row:last-of-type { border-bottom: 0; }
+    .rating-chips { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
+    .rating-chips .badge { justify-content: center; text-align: center; }
+    [id="stats"] { padding-block: 26px; } .stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .stat { min-width: 0; border-bottom: 1px solid var(--navy-500); padding: 18px; text-align: center; }
+    .stat__num { display: block; color: var(--white); font-family: Montserrat, sans-serif; font-size: 34px; font-weight: 800; line-height: 1; }
+    .stat__label { display: block; margin-top: 8px; color: var(--border); font-size: 13px; }
+    .direction-grid { grid-template-columns: 1fr; } .direction-card { overflow: hidden; }
+    .direction-card__bar { padding: 14px 20px; color: var(--white); background: var(--navy-700); font-family: Montserrat, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .12em; }
+    .direction-card__bar--red { background: var(--red); } .direction-card__body { padding: 22px; }
+    .check-list { display: grid; gap: 10px; margin: 18px 0 22px; padding: 0; list-style: none; }
+    .check-list li { display: flex; gap: 10px; align-items: flex-start; } .button-pair { display: flex; flex-wrap: wrap; gap: 10px; }
+    .services-grid { grid-template-columns: 1fr; margin-top: 22px; }
+    .service-card { display: flex; min-height: 220px; flex-direction: column; align-items: flex-start; padding: 20px; }
+    .service-card h3 { margin: 16px 0 8px; } .service-price { margin-bottom: 18px; color: var(--navy-700); font-weight: 800; }
+    .more-link { margin-top: auto; color: var(--red); font-weight: 700; } .more-link:hover { color: var(--red-700); }
+    .price-wrap { margin-top: 22px; } .price-table { width: 100%; border-collapse: collapse; }
+    .price-table thead { display: none; } .price-table tbody { display: grid; gap: 10px; }
+    .price-table tr { display: grid; min-width: 0; gap: 6px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; background: var(--white); }
+    .price-table td { min-width: 0; } .price-table td::before { display: block; margin-bottom: 2px; color: var(--muted); font-size: 11px; font-weight: 600; }
+    .price-table td:nth-child(1)::before { content: "Услуга"; } .price-table td:nth-child(2)::before { content: "Условия"; }
+    .price-table td:nth-child(3)::before { content: "Цена"; } .price-table td:nth-child(4)::before { content: "Действие"; }
+    .price { color: var(--navy-700); font-weight: 700; }
+    .order-link { display: inline-flex; min-height: 44px; align-items: center; color: var(--red); font-weight: 700; }
+    .price-footnotes { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; color: var(--muted); font-size: 12px; }
+    .price-footnotes strong { color: var(--red); }
+    .calc-card { display: grid; overflow: hidden; border-color: var(--navy-700); }
+    .calc-controls, .calc-result { min-width: 0; padding: 20px; } .calc-result { border-top: 1px solid var(--border); background: var(--white); }
+    .control-group { margin: 0 0 22px; padding: 0; border: 0; }
+    .control-group legend, .range-label { display: flex; width: 100%; justify-content: space-between; gap: 12px; margin-bottom: 9px; color: var(--navy-700); font-family: Montserrat, sans-serif; font-weight: 800; }
+    .segments { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .segment { min-height: 44px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px; cursor: pointer; color: var(--navy-700); background: var(--white); font-size: 13px; font-weight: 700; }
+    .segment[aria-pressed="true"] { border-color: var(--navy-700); color: var(--white); background: var(--navy-700); }
+    .segment:disabled { cursor: not-allowed; opacity: .55; } .range-value { color: var(--red); }
+    .range-input { width: 100%; accent-color: var(--red); }
+    .range-captions { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
+    .addon-list { display: grid; gap: 12px; }
+    .addon-row { display: grid; min-width: 0; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; }
+    .addon-row input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--red); }
+    .addon-row input[type="number"] { grid-column: 2; width: 86px; min-height: 44px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text); background: var(--white); font-size: 16px; }
+    .calc-kicker { margin-bottom: 8px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+    .calc-total { margin-bottom: 10px; color: var(--navy-700); font-family: Montserrat, sans-serif; font-size: clamp(30px, 8vw, 42px); font-weight: 800; line-height: 1.1; }
+    .minimum-note { margin-bottom: 14px; color: var(--red); font-weight: 700; }
+    .floor-grid { display: grid; gap: 24px; } .floor-board { min-width: 0; border-radius: var(--radius); padding: 12px; background: var(--bg-soft); }
+    .floor-plan { width: 100%; height: auto; } .floor-zone { cursor: pointer; }
+    .floor-zone rect { fill: var(--white); stroke: var(--navy-700); stroke-width: 1.5; transition: fill var(--duration) var(--ease-smooth), stroke var(--duration) var(--ease-smooth); }
+    .floor-zone text { fill: var(--navy-700); font: 700 11px Montserrat, sans-serif; pointer-events: none; }
+    .floor-zone.is-active rect { fill: rgba(226, 28, 33, .12); stroke: var(--red); }
+    .floor-pills { display: flex; max-width: 100%; gap: 6px; overflow-x: auto; padding-top: 12px; }
+    .zone-pill { min-height: 44px; flex: 0 0 auto; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 8px 14px; cursor: pointer; color: var(--navy-700); background: var(--white); font-weight: 700; }
+    .zone-pill[aria-pressed="true"] { border-color: var(--red); color: var(--red); }
+    .zone-checklist { align-content: start; } .zone-checklist h3 { margin-bottom: 14px; }
+    .cleaners-grid { grid-template-columns: 1fr; } .cleaner-card { padding: 20px; }
+    .avatar { display: grid; width: 72px; height: 72px; place-items: center; border-radius: 50%; color: var(--white); background: var(--navy-700); font-family: Montserrat, sans-serif; font-size: 22px; font-weight: 700; }
+    .avatar--red { background: var(--red); } .cleaner-card h3 { margin: 14px 0 4px; }
+    .cleaner-meta { margin-bottom: 8px; color: var(--muted); font-size: 13px; }
+    .cleaner-badges { display: grid; gap: 6px; margin-top: 12px; } .cleaner-badges .badge { min-height: 0; white-space: normal; }
+    .hiring-rule { margin-top: 18px; color: var(--muted); font-size: 12px; }
+    .compare { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; touch-action: none; user-select: none; }
+    .compare__layer { position: absolute; inset: 0; }
+    .compare__after { background: linear-gradient(135deg, var(--white), var(--bg-blue)); }
+    .compare__before { background: linear-gradient(135deg, var(--grime-1), var(--grime-2)); clip-path: inset(0 50% 0 0); }
+    .smudge { position: absolute; border-radius: 50%; background: rgba(32, 53, 102, .22); }
+    .smudge--one { width: 22%; height: 18%; left: 12%; top: 18%; transform: rotate(12deg); }
+    .smudge--two { width: 30%; height: 12%; left: 35%; top: 58%; transform: rotate(-8deg); }
+    .smudge--three { width: 14%; height: 25%; left: 72%; top: 22%; transform: rotate(18deg); }
+    .shine { position: absolute; width: 8%; height: 90%; left: 62%; top: 5%; transform: rotate(18deg); background: rgba(255, 255, 255, .7); }
+    .compare__handle { position: absolute; z-index: 4; width: 44px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); cursor: ew-resize; touch-action: none; }
+    .compare__handle::before { position: absolute; width: 4px; height: 100%; left: 50%; top: 0; content: ""; transform: translateX(-50%); background: var(--white); }
+    .compare__knob { position: absolute; display: grid; width: 40px; height: 40px; left: 50%; top: 50%; place-items: center; border-radius: 50%; transform: translate(-50%, -50%); color: var(--red); background: var(--white); box-shadow: var(--shadow-soft); }
+    .compare__knob svg { width: 24px; }
+    .compare__label { position: absolute; z-index: 3; top: 14px; border-radius: var(--radius-pill); padding: 6px 12px; color: var(--white); font-weight: 700; }
+    .compare__label--before { left: 14px; background: var(--navy-700); } .compare__label--after { right: 14px; background: var(--red); }
+    .caption { margin-top: 10px; color: var(--muted); font-size: 11px; }
+    .cases-grid { grid-template-columns: 1fr; } .case-card { overflow: hidden; }
+    .case-strip { height: 8px; background: linear-gradient(90deg, var(--navy-700), var(--blue-600)); }
+    .case-body { padding: 20px; } .case-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .case-fact span { display: block; color: var(--muted); font-size: 11px; } .case-fact strong { color: var(--navy-700); }
+    .chips { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .object-chip { display: flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--navy-500); border-radius: var(--radius-pill); padding: 8px 14px; color: var(--white); text-align: center; transition: border-color var(--duration-fast) var(--ease-smooth); }
+    .object-chip:hover { border-color: var(--red); }
+    .rating-badges { display: grid; gap: 12px; margin-bottom: 22px; }
+    .rating-badge { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px; }
+    .rating-badge a { display: inline-flex; min-height: 44px; align-items: center; color: var(--blue-600); font-weight: 700; }
+    .reviews-grid { grid-template-columns: 1fr; } .review-card { padding: 20px; }
+    .platform { display: inline-flex; margin-bottom: 14px; border-radius: var(--radius-pill); padding: 5px 9px; color: var(--navy-700); background: var(--bg-soft); font-size: 11px; font-weight: 700; }
+    .review-head { display: grid; grid-template-columns: 48px 1fr; align-items: center; gap: 10px; }
+    .review-avatar { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; color: var(--white); background: var(--navy-700); font-weight: 700; }
+    .review-name { margin: 0; font-weight: 700; } .review-date { color: var(--muted); font-size: 11px; }
+    .review-card .stars { margin: 12px 0; }
+    .steps { position: relative; display: grid; gap: 14px; }
+    .step { position: relative; min-width: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 18px; background: var(--white); }
+    .step__num { position: absolute; right: 8px; top: -16px; color: rgba(226, 28, 33, .12); font-family: Montserrat, sans-serif; font-size: 88px; font-weight: 800; line-height: 1; }
+    .step h3, .step p { position: relative; z-index: 1; }
+    .why-grid { grid-template-columns: 1fr; } .why-card { padding: 20px; }
+    .why-card h3 { margin: 16px 0 8px; } .why-card p { margin-bottom: 0; }
+    .faq-list { display: grid; gap: 10px; } .faq-item { border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--white); }
+    .faq-item summary { position: relative; display: flex; min-height: 56px; align-items: center; padding: 12px 52px 12px 16px; cursor: pointer; color: var(--navy-700); font-family: Montserrat, sans-serif; font-weight: 700; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { position: absolute; right: 18px; content: "+"; color: var(--red); font-size: 28px; font-weight: 500; transition: transform var(--duration) var(--ease-smooth); }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { padding: 0 16px 16px; color: var(--muted); } .faq-answer p { margin-bottom: 0; }
+    .cta-wrap { max-width: 820px; margin-inline: auto; text-align: center; } .cta-wrap .s__title { color: var(--white); }
+    .cta-wrap .s__lead { color: var(--border); } .cta-form { max-width: 620px; margin: 24px auto 0; }
+    .cta-phone { display: inline-flex; min-height: 52px; align-items: center; margin-top: 20px; color: var(--white); font-family: Montserrat, sans-serif; font-size: clamp(22px, 7vw, 34px); font-weight: 800; }
+    .contacts-grid { grid-template-columns: 1fr; } .contact-card { padding: 20px; }
+    .contact-card a { display: flex; min-height: 44px; align-items: center; color: var(--blue-600); font-weight: 700; overflow-wrap: anywhere; }
+    .site-footer { margin-top: var(--section-pad); padding-block: 40px; color: var(--white); background: var(--navy-900); }
+    .footer-grid { display: grid; gap: 28px; } .footer-logo .logo__cleaning { color: var(--white); }
+    .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+    .footer-links a { display: flex; min-height: 44px; align-items: center; color: var(--white); }
+    .messengers { display: flex; gap: 10px; }
+    .messenger { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; color: var(--navy-700); background: var(--white); }
+    .messenger svg { width: 24px; height: 24px; }
+    .copyright { margin: 26px 0 0; border-top: 1px solid var(--navy-500); padding-top: 18px; color: var(--border); font-size: 12px; }
+    @media (min-width: 640px) {
+      :root { --section-pad: 76px; } [id="topbar"] { display: block; } .topbar__inner { display: flex; }
+      .form-row { grid-template-columns: minmax(0, 1fr) auto; } .rating-chips { grid-template-columns: repeat(3, 1fr); }
+      .services-grid, .cleaners-grid, .cases-grid, .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .segments { grid-template-columns: repeat(3, 1fr); } .addon-row { grid-template-columns: 24px minmax(0, 1fr) auto; }
+      .addon-row input[type="number"] { grid-column: auto; } .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .rating-badges { grid-template-columns: repeat(2, minmax(0, 1fr)); } .contacts-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (min-width: 900px) {
+      :root { --section-pad: 88px; } .header__inner { grid-template-columns: auto 1fr auto; }
+      .header__desktop { display: flex; align-items: center; } .desktop-nav { justify-content: center; gap: 4px; }
+      .desktop-nav a { display: inline-flex; min-height: 44px; align-items: center; padding: 8px 10px; color: var(--navy-700); font-size: 13px; font-weight: 700; }
+      .header__actions { justify-content: flex-end; gap: 12px; } .header__phone { color: var(--navy-700); font-weight: 800; white-space: nowrap; }
+      .nav-toggle, .mobile-nav { display: none; } .hero__grid { grid-template-columns: 1.15fr .85fr; align-items: center; gap: 48px; }
+      .direction-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .price-table thead { display: table-header-group; } .price-table tbody { display: table-row-group; }
+      .price-table tr { display: table-row; border: 0; padding: 0; }
+      .price-table th, .price-table td { border-bottom: 1px solid var(--border); padding: 14px 12px; text-align: left; vertical-align: middle; }
+      .price-table th { color: var(--muted); font-size: 12px; } .price-table td::before { display: none; }
+      .calc-card { grid-template-columns: 1.2fr .8fr; } .calc-controls, .calc-result { padding: 30px; }
+      .calc-result { border-top: 0; border-left: 1px solid var(--border); }
+      .floor-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); align-items: start; gap: 40px; }
+      .cleaners-grid, .cases-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .chips { grid-template-columns: repeat(4, minmax(0, 1fr)); } .reviews-grid, .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .steps::before { position: absolute; z-index: 0; height: 1px; left: 8%; right: 8%; top: 50%; content: ""; background: var(--navy-700); }
+      .step { z-index: 1; } .footer-grid { grid-template-columns: 1fr 1fr auto; align-items: start; }
+    }
+    @media (min-width: 1100px) {
+      .desktop-nav { gap: 10px; } .desktop-nav a { font-size: 14px; } .hero__grid { gap: 70px; }
+      .stat { border-right: 1px solid var(--navy-500); border-bottom: 0; } .stat:last-child { border-right: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html body *, html body *::before, html body *::after { animation-duration: .01ms; animation-iteration-count: 1; transition-duration: .01ms; scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+<section class="s s--navy" id="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__group"><a href="tel:+73433510995">+7 343 351 09 95</a><a href="tel:+79644883260">+7 964 488 32 60</a><a href="mailto:krcleaning@mail.ru">krcleaning@mail.ru</a></div>
+    <div class="topbar__group"><span>Екатеринбург, ул. Московская 198</span><strong>Работаем 24/7</strong></div>
+  </div>
+</section>
+<section class="s s--white" id="siteheader">
+  <div class="container header__inner">
+    <a class="logo" href="#hero" aria-label="KR Cleaning, на главную">
+      <svg class="logo__mark" viewBox="0 0 54 54" role="img" aria-label="Логотип KR Cleaning">
+        <rect x="2" y="2" width="50" height="50" rx="11" fill="var(--white)" stroke="var(--red)" stroke-width="2"/>
+        <text x="11" y="31" fill="var(--red)" font-family="Montserrat" font-size="24" font-weight="800">K</text>
+        <text x="28" y="31" fill="var(--navy-700)" font-family="Montserrat" font-size="24" font-weight="800">R</text>
+        <text x="9" y="44" fill="var(--red)" font-family="Montserrat" font-size="7" font-weight="700" letter-spacing=".2em">CLEANING</text>
+      </svg>
+      <span class="logo__word"><span class="logo__kr">KR</span> <span class="logo__cleaning">cleaning</span></span>
+    </a>
+    <nav class="header__desktop desktop-nav" aria-label="Основная навигация">
+      <a href="#hero">Главная</a><a href="#uslugi">Все услуги</a><a href="#ceny">Цены</a><a href="#calc">Калькулятор</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="header__desktop header__actions"><a class="header__phone" href="tel:+73433510995">+7 343 351 09 95</a><a class="btn btn--red" href="#zayavka">Нужна уборка</a></div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+    <a href="#hero">Главная</a><a href="#uslugi">Все услуги</a><a href="#ceny">Цены</a><a href="#calc">Калькулятор</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a><a class="btn btn--red" href="#zayavka">Нужна уборка</a>
+  </nav>
+</section>
+<main>
+<section class="s s--blue" id="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">ЧИСТИМ · МОЕМ · УБИРАЕМ</p>
+      <h1>Профессиональная уборка в Екатеринбурге</h1>
+      <p class="hero__lead">Работаем с 2013 года, обслужили более 10 000 клиентов. Выезд оценщика и расчёт бесплатно, цену фиксируем до начала работ.</p>
+      <form class="hero__form demo-form"><div class="form-row"><input class="field" type="tel" aria-label="Номер телефона" placeholder="+7 900 000 00 00" required><button class="btn btn--red" type="submit">Оставить заявку</button></div><p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p></form>
+      <div class="hero__actions"><a class="btn btn--ghost" href="#calc">Рассчитать стоимость</a></div>
+    </div>
+    <div class="hero__visual">
+      <svg class="hero__bubbles" viewBox="0 0 500 420" aria-hidden="true">
+        <circle cx="70" cy="90" r="40" fill="var(--blue-600)" opacity=".08"/><circle cx="420" cy="70" r="58" fill="var(--navy-700)" opacity=".1"/>
+        <circle cx="380" cy="340" r="70" fill="var(--blue-600)" opacity=".14"/><circle cx="120" cy="330" r="28" fill="var(--navy-700)" opacity=".1"/>
+        <circle cx="250" cy="45" r="18" fill="none" stroke="var(--red)" stroke-width="3"/>
+      </svg>
+      <div class="card rating-card">
+        <div class="rating-row"><span>Flamp 5.0</span><span class="stars" aria-label="5 из 5">★★★★★</span></div>
+        <div class="rating-row"><span>Яндекс 5.0</span><span class="stars" aria-label="5 из 5">★★★★★</span></div>
+        <div class="rating-chips"><span class="badge">с 2013 года</span><span class="badge">10 000+ клиентов</span><span class="badge">24/7</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s s--navy" id="stats">
+  <div class="container stats__grid">
+    <div class="stat"><span class="stat__num">2013</span><span class="stat__label">год основания</span></div>
+    <div class="stat"><span class="stat__num">10 000+</span><span class="stat__label">довольных клиентов</span></div>
+    <div class="stat"><span class="stat__num">60+</span><span class="stat__label">сотрудников</span></div>
+    <div class="stat"><span class="stat__num">20+</span><span class="stat__label">единиц проф. техники</span></div>
+    <div class="stat"><span class="stat__num">ТОП-10</span><span class="stat__label">в Екатеринбурге</span></div>
+    <div class="stat"><span class="stat__num">24/7</span><span class="stat__label">приём заявок</span></div>
+  </div>
+</section>
+<section class="s s--white" id="napravleniya">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Два направления работы</h2><p class="s__lead">Убираем жилые и коммерческие объекты по понятному плану работ.</p></div>
+    <div class="grid direction-grid">
+      <article class="card direction-card"><div class="direction-card__bar">ДЛЯ БИЗНЕСА</div><div class="direction-card__body">
+        <h3>Уборка офисов и помещений</h3><p>Ежедневная и комплексная уборка офисов, торговых площадей, производств, складов и паркингов, мытьё витрин и фасадов.</p>
+        <ul class="check-list">
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Работаем круглосуточно, включая ночь и выходные</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Менеджер находится на объекте</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Фото и видео отчёт в реальном времени</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Свои средства и более 20 единиц техники</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Клинеры с опытом от 3 лет</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Выезд и оценка бесплатно</li>
+        </ul><div class="button-pair"><a class="btn btn--red" href="#zayavka">Заказать уборку</a><a class="btn btn--ghost" href="#ceny">Смотреть цены</a></div>
+      </div></article>
+      <article class="card direction-card"><div class="direction-card__bar direction-card__bar--red">ДЛЯ ДОМА</div><div class="direction-card__body">
+        <h3>Уборка квартир и коттеджей</h3><p>Генеральная уборка, уборка после ремонта, химчистка мебели и ковролина, мытьё окон.</p>
+        <ul class="check-list">
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Выезд оценщика бесплатно</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Цену фиксируем до начала работ</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Можем забрать ключи в любой точке города</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Клинеры с гражданством РФ и пропиской в Екатеринбурге</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Убираем объект за один день</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Фото и видео отчёт по ходу работы</li>
+        </ul><div class="button-pair"><a class="btn btn--red" href="#zayavka">Заказать уборку</a><a class="btn btn--ghost" href="#ceny">Смотреть цены</a></div>
+      </div></article>
+    </div>
+  </div>
+</section>
+<section class="s s--blue" id="uslugi">
+  <div class="container" data-tabs>
+    <div class="s__head"><h2 class="s__title">Все услуги</h2><p class="s__lead">Подберём состав работ для дома, офиса или большого коммерческого объекта.</p></div>
+    <div class="tabs" role="tablist" aria-label="Направление услуг">
+      <button class="tab" id="service-home-tab" role="tab" aria-selected="true" aria-controls="service-home">Для дома</button>
+      <button class="tab" id="service-business-tab" role="tab" aria-selected="false" aria-controls="service-business" tabindex="-1">Для бизнеса</button>
+    </div>
+    <div id="service-home" role="tabpanel" aria-labelledby="service-home-tab">
+      <div class="grid services-grid">
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Квартира"><path d="M5 27V12l11-7 11 7v15H5Zm8 0v-8h6v8" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Генеральная уборка квартир</h3><p class="service-price">от 450 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Дом"><path d="M3 15 16 4l13 11M6 13v15h20V13M12 28v-8h8v8" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Генеральная уборка коттеджей</h3><p class="service-price">от 500 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Уборка после ремонта"><path d="m6 26 9-9m3-3 8-8M9 6l17 17M4 28h10" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Уборка после ремонта</h3><p class="service-price">от 550 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Мягкая мебель"><path d="M6 15h20a3 3 0 0 1 3 3v8H3v-8a3 3 0 0 1 3-3Zm2 0V9h16v6M6 26v3m20-3v3" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Химчистка мягкой мебели</h3><p class="service-price">от 750 ₽</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Матрас"><rect x="3" y="9" width="26" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 14h18M8 23v4m16-4v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Химчистка матрасов</h3><p class="service-price">от 2 500 ₽</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Окно"><rect x="5" y="4" width="22" height="24" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 4v24M5 16h22" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Мытьё окон</h3><p class="service-price">от 750 ₽ за окно</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+      </div>
+    </div>
+    <div id="service-business" role="tabpanel" aria-labelledby="service-business-tab" hidden>
+      <div class="grid services-grid">
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Офис"><path d="M5 28V7h15v21M20 13h7v15M9 12h3m3 0h2m-8 5h3m3 0h2m-8 5h3m3 0h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Комплексная уборка офисов</h3><p class="service-price">от 120 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Торговая площадь"><path d="M4 12h24l-2-7H6l-2 7Zm2 0v15h20V12M11 27v-9h10v9" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Уборка торговых площадей</h3><p class="service-price">от 100 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Производство"><path d="M4 28V15l8 4v-7l8 4V8h7v20H4Zm18-20V4h4v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Уборка производств</h3><p class="service-price">от 250 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Паркинг"><path d="M5 27V5h12a7 7 0 0 1 0 14H9M9 9v18m0-12h8a3 3 0 0 0 0-6H9" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Подземные паркинги</h3><p class="service-price">от 85 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Витрины и фасады"><rect x="5" y="4" width="22" height="24" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 13h22M11 13v15m10-15v15" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Мытьё витрин и фасадов</h3><p class="service-price">от 300 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+        <article class="card service-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Уборка после чрезвычайной ситуации"><path d="M16 3 3 27h26L16 3Zm0 8v8m0 4v2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Уборка после ЧП</h3><p class="service-price">от 1 000 ₽/м²</p><a class="more-link" href="#ceny">Подробнее →</a></article>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s s--white" id="ceny">
+  <div class="container" data-tabs>
+    <div class="s__head"><h2 class="s__title">Цены на клининговые услуги</h2><p class="s__lead">Стоимость зависит от площади, состояния объекта и состава работ. Точную смету фиксируем после бесплатной оценки.</p></div>
+    <div class="tabs tabs--scroll" role="tablist" aria-label="Категории цен">
+      <button class="tab" id="price-daily-tab" role="tab" aria-selected="true" aria-controls="price-daily">Ежедневная</button>
+      <button class="tab" id="price-general-tab" role="tab" aria-selected="false" aria-controls="price-general" tabindex="-1">Генеральная</button>
+      <button class="tab" id="price-repair-tab" role="tab" aria-selected="false" aria-controls="price-repair" tabindex="-1">После ремонта</button>
+      <button class="tab" id="price-emergency-tab" role="tab" aria-selected="false" aria-controls="price-emergency" tabindex="-1">После ЧП</button>
+      <button class="tab" id="price-clean-tab" role="tab" aria-selected="false" aria-controls="price-clean" tabindex="-1">Химчистка</button>
+      <button class="tab" id="price-outdoor-tab" role="tab" aria-selected="false" aria-controls="price-outdoor" tabindex="-1">Наружный клининг</button>
+    </div>
+    <div class="price-wrap" id="price-daily" role="tabpanel" aria-labelledby="price-daily-tab">
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>Комплексная уборка офисов</td><td>Коммерческие помещения</td><td class="price">от 120 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Торговые площади</td><td>Ежедневная уборка</td><td class="price">от 100 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Производство</td><td>Производственные площади</td><td class="price">от 250 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Подземный паркинг</td><td>Механизированная уборка</td><td class="price">от 85 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Спортивные комплексы</td><td>Регулярная уборка</td><td class="price">от 150 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong></div>
+    </div>
+    <div class="price-wrap" id="price-general" role="tabpanel" aria-labelledby="price-general-tab" hidden>
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>Генеральная уборка квартиры</td><td>Стоимость за м²</td><td class="price">от 450 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Генеральная уборка коттеджа</td><td>Стоимость за м²</td><td class="price">от 500 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Генеральная уборка офиса</td><td>Стоимость за м²</td><td class="price">от 400 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong><span>Минимальный заказ 15 000 руб.</span></div>
+    </div>
+    <div class="price-wrap" id="price-repair" role="tabpanel" aria-labelledby="price-repair-tab" hidden>
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>После ремонта</td><td>до 100 м²</td><td class="price">от 550 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>100 до 150 м²</td><td class="price">от 500 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>151 до 200 м²</td><td class="price">от 490 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>201 до 300 м²</td><td class="price">от 480 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>301 до 500 м²</td><td class="price">от 450 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>501 до 700 м²</td><td class="price">от 420 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>После ремонта</td><td>свыше 701 м²</td><td class="price">договорная</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong><span>Свыше 701 м² цена договорная</span></div>
+    </div>
+    <div class="price-wrap" id="price-emergency" role="tabpanel" aria-labelledby="price-emergency-tab" hidden>
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>Уборка после пожара</td><td>Стоимость за м²</td><td class="price">от 1 000 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Уборка после затопа</td><td>Стоимость за м²</td><td class="price">от 1 000 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Уборка после трагедии</td><td>Стоимость за м²</td><td class="price">от 1 500 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Вывоз мусора</td><td>Одна машина</td><td class="price">от 6 000 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong><span>Минимальный заказ 15 000 руб.</span></div>
+    </div>
+    <div class="price-wrap" id="price-clean" role="tabpanel" aria-labelledby="price-clean-tab" hidden>
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>Стул, ткань</td><td>За штуку</td><td class="price">от 250 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Кресло, ткань</td><td>За штуку</td><td class="price">от 750 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Угловой диван, ткань</td><td>За штуку</td><td class="price">от 4 500 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Стул, кожа</td><td>За штуку</td><td class="price">от 1 000 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Кресло, кожа</td><td>За штуку</td><td class="price">от 2 500 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Диван, кожа</td><td>За погонный метр</td><td class="price">от 2 000 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Матрас 80x200</td><td>За штуку</td><td class="price">от 2 500 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Матрас 160x200</td><td>За штуку</td><td class="price">от 3 500 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Матрас 180x220</td><td>За штуку</td><td class="price">от 5 500 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Ковролин</td><td>до 10 м²</td><td class="price">от 550 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Ковролин</td><td>11 до 50 м²</td><td class="price">от 490 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Ковролин</td><td>51 до 70 м²</td><td class="price">от 470 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Ковролин</td><td>71 до 100 м²</td><td class="price">от 450 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Ковролин</td><td>более 101 м²</td><td class="price">договорная</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Кристаллизация мрамора</td><td>Стоимость за м²</td><td class="price">от 650 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Глубокая чистка полов</td><td>Стоимость за м²</td><td class="price">от 500 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Удаление высолов</td><td>Стоимость за м²</td><td class="price">от 750 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong><span>Выведение запаха и дезодорация +500 ₽, кондиционирование +500 ₽</span></div>
+    </div>
+    <div class="price-wrap" id="price-outdoor" role="tabpanel" aria-labelledby="price-outdoor-tab" hidden>
+      <table class="price-table"><thead><tr><th>Услуга</th><th>Условия</th><th>Цена</th><th>Действие</th></tr></thead><tbody>
+        <tr><td>Мытьё окон</td><td>За штуку</td><td class="price">от 750 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Мытьё витрин</td><td>Стоимость за м²</td><td class="price">от 300 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Мытьё фасада</td><td>Стоимость за м²</td><td class="price">от 350 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Мытьё вывески</td><td>Стоимость за м²</td><td class="price">от 500 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Уборка АЗС</td><td>Стоимость за м²</td><td class="price">от 250 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Удаление плёнки</td><td>За объект</td><td class="price">от 5 000 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Высотный монтаж</td><td>За объект</td><td class="price">от 10 000 ₽</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+        <tr><td>Чистка крыш от снега</td><td>Стоимость за м²</td><td class="price">от 150 ₽/м²</td><td><a class="order-link" href="#zayavka">Заказать</a></td></tr>
+      </tbody></table><div class="price-footnotes"><strong>Выезд и оценка всегда бесплатно</strong></div>
+    </div>
+  </div>
+</section>
+<section class="s s--blue" id="calc">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Рассчитайте стоимость уборки</h2><p class="s__lead">Выберите тип работ, объект и площадь. Калькулятор покажет предварительную сумму.</p></div>
+    <div class="card calc-card">
+      <div class="calc-controls">
+        <fieldset class="control-group"><legend>Тип уборки</legend><div class="segments" data-calc-group="type">
+          <button class="segment" type="button" aria-pressed="true" data-value="general">Генеральная</button>
+          <button class="segment" type="button" aria-pressed="false" data-value="repair">После ремонта</button>
+          <button class="segment" type="button" aria-pressed="false" data-value="daily">Ежедневная (офис)</button>
+        </div></fieldset>
+        <fieldset class="control-group" id="object-group"><legend>Объект</legend><div class="segments" data-calc-group="object">
+          <button class="segment" type="button" aria-pressed="true" data-value="flat">Квартира</button>
+          <button class="segment" type="button" aria-pressed="false" data-value="cottage">Коттедж</button>
+          <button class="segment" type="button" aria-pressed="false" data-value="office">Офис</button>
+        </div><p class="form-note" id="repair-note" hidden>Для уборки после ремонта ставка зависит от площади, тип объекта на неё не влияет.</p></fieldset>
+        <div class="control-group"><label class="range-label" for="area-range">Площадь <span class="range-value"><span id="area-value">100</span> м²</span></label>
+          <input class="range-input" id="area-range" type="range" min="20" max="500" step="5" value="100" aria-label="Площадь в квадратных метрах">
+          <div class="range-captions"><span>20 м²</span><span>500 м²</span></div>
+        </div>
+        <fieldset class="control-group"><legend>Дополнительно</legend><div class="addon-list">
+          <label class="addon-row"><input id="addon-windows" type="checkbox"><span>Мытьё окон, 750 ₽ за окно</span><input id="window-count" type="number" min="1" max="20" value="1" aria-label="Количество окон" disabled></label>
+          <label class="addon-row"><input id="addon-odor" type="checkbox"><span>Выведение запаха и дезодорация, +500 ₽</span></label>
+          <label class="addon-row"><input id="addon-condition" type="checkbox"><span>Кондиционирование ткани, +500 ₽</span></label>
+          <label class="addon-row"><input id="addon-waste" type="checkbox"><span>Вывоз мусора, 1 машина, +6 000 ₽</span></label>
+        </div></fieldset>
+      </div>
+      <div class="calc-result">
+        <p class="calc-kicker">ОРИЕНТИРОВОЧНАЯ СТОИМОСТЬ</p>
+        <p class="calc-total">от <span id="calc-total">45&nbsp;000</span> ₽</p>
+        <p class="minimum-note" id="minimum-note" hidden>минимальный заказ 15 000 ₽</p>
+        <ul class="check-list">
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Выезд и оценка бесплатно</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Цену фиксируем до начала работ</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Свои средства и техника</li>
+        </ul>
+        <form class="demo-form"><button class="btn btn--red" type="submit">Отправить расчёт</button></form>
+        <p class="form-note">Расчёт предварительный. Точную смету менеджер составляет после бесплатного выезда на объект.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s s--white" id="chto-vhodit">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Что входит в уборку</h2><p class="s__lead">Выберите зону на плане, чтобы посмотреть перечень работ.</p></div>
+    <div class="floor-grid">
+      <div class="floor-board">
+        <svg class="floor-plan" viewBox="0 0 520 360" role="img" aria-label="Интерактивный план квартиры с четырьмя зонами">
+          <g class="floor-zone is-active" data-zone="kitchen" role="button" tabindex="0" aria-label="Кухня"><rect x="20" y="20" width="230" height="145" rx="5"/><text x="40" y="52">Кухня</text></g>
+          <g class="floor-zone" data-zone="bath" role="button" tabindex="0" aria-label="Ванная"><rect x="270" y="20" width="230" height="105" rx="5"/><text x="290" y="52">Ванная</text></g>
+          <g class="floor-zone" data-zone="rooms" role="button" tabindex="0" aria-label="Комнаты"><rect x="20" y="185" width="320" height="155" rx="5"/><text x="40" y="217">Комнаты</text></g>
+          <g class="floor-zone" data-zone="hall" role="button" tabindex="0" aria-label="Прихожая"><rect x="360" y="145" width="140" height="195" rx="5"/><text x="380" y="177">Прихожая</text></g>
+        </svg>
+        <div class="floor-pills" aria-label="Выбор зоны">
+          <button class="zone-pill" type="button" data-zone="kitchen" aria-pressed="true">Кухня</button>
+          <button class="zone-pill" type="button" data-zone="bath" aria-pressed="false">Ванная</button>
+          <button class="zone-pill" type="button" data-zone="rooms" aria-pressed="false">Комнаты</button>
+          <button class="zone-pill" type="button" data-zone="hall" aria-pressed="false">Прихожая</button>
+        </div>
+      </div>
+      <div class="zone-checklist" id="zone-checklist" aria-live="polite">
+        <h3>Кухня</h3>
+        <ul class="check-list">
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Обезжиривание фасадов гарнитура</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Мытьё варочной панели и фартука</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Чистка вытяжки</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Мытьё техники снаружи</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Мойка раковины и смесителя</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Полы и плинтусы</li>
+          <li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>Вынос мусора</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s s--blue" id="klinery">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Наши клинеры</h2><p class="s__lead">Специалисты распределяют зоны работы и действуют по чек-листу.</p></div>
+    <div class="grid cleaners-grid">
+      <article class="card cleaner-card"><div class="avatar">АК</div><h3>Анна К.</h3><p class="cleaner-meta">Генеральная уборка · опыт 6 лет</p><div class="stars" aria-label="5 из 5">★★★★★</div><div class="cleaner-badges"><span class="badge">Проверен службой безопасности</span><span class="badge">Гражданство РФ, прописка в Екатеринбурге</span></div></article>
+      <article class="card cleaner-card"><div class="avatar avatar--red">МС</div><h3>Марина С.</h3><p class="cleaner-meta">Уборка после ремонта · опыт 5 лет</p><div class="stars" aria-label="5 из 5">★★★★★</div><div class="cleaner-badges"><span class="badge">Проверен службой безопасности</span><span class="badge">Гражданство РФ, прописка в Екатеринбурге</span></div></article>
+      <article class="card cleaner-card"><div class="avatar">ОП</div><h3>Ольга П.</h3><p class="cleaner-meta">Химчистка мебели · опыт 4 года</p><div class="stars" aria-label="5 из 5">★★★★★</div><div class="cleaner-badges"><span class="badge">Проверен службой безопасности</span><span class="badge">Гражданство РФ, прописка в Екатеринбурге</span></div></article>
+      <article class="card cleaner-card"><div class="avatar avatar--red">ЕН</div><h3>Елена Н.</h3><p class="cleaner-meta">Коммерческие объекты · опыт 7 лет</p><div class="stars" aria-label="5 из 5">★★★★★</div><div class="cleaner-badges"><span class="badge">Проверен службой безопасности</span><span class="badge">Гражданство РФ, прописка в Екатеринбурге</span></div></article>
+    </div>
+    <p class="hiring-rule">Опыт каждого клинера от 3 лет, каждый специалист отвечает за свою зону.</p>
+    <p class="note">Карточки сотрудников показаны для примера. На рабочем сайте здесь будут реальные фото и имена вашей команды.</p>
+  </div>
+</section>
+<section class="s s--white" id="do-posle">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">До и после уборки</h2><p class="s__lead">Передвигайте разделитель, чтобы сравнить результат.</p></div>
+    <div class="compare" id="compare">
+      <div class="compare__layer compare__after"><span class="shine"></span></div>
+      <div class="compare__layer compare__before" id="compare-before"><span class="smudge smudge--one"></span><span class="smudge smudge--two"></span><span class="smudge smudge--three"></span></div>
+      <span class="compare__label compare__label--before">До</span><span class="compare__label compare__label--after">После</span>
+      <div class="compare__handle" id="compare-handle" role="slider" tabindex="0" aria-label="Сравнение до и после" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <span class="compare__knob"><svg viewBox="0 0 24 24" role="img" aria-label="Двигать влево и вправо"><path d="m9 7-5 5 5 5m6-10 5 5-5 5M4 12h16" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+      </div>
+    </div>
+    <p class="caption">Иллюстрация механики. На рабочем сайте здесь будут реальные фотографии объектов KR Cleaning.</p>
+  </div>
+</section>
+<section class="s s--blue" id="keysy">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Результаты нашей уборки</h2><p class="s__lead">Как может выглядеть карточка выполненного объекта.</p></div>
+    <div class="grid cases-grid">
+      <article class="card case-card"><div class="case-strip"></div><div class="case-body"><h3>Двухкомнатная квартира после ремонта</h3><div class="case-facts"><div class="case-fact"><span>Площадь</span><strong>68 м²</strong></div><div class="case-fact"><span>Время уборки</span><strong>9 часов</strong></div></div><p>Удалили строительную пыль, вымыли окна, кухню и санузел.</p></div></article>
+      <article class="card case-card"><div class="case-strip"></div><div class="case-body"><h3>Офис на Московской</h3><div class="case-facts"><div class="case-fact"><span>Площадь</span><strong>140 м²</strong></div><div class="case-fact"><span>Время уборки</span><strong>4 часа</strong></div></div><p>Подготовили рабочие зоны, переговорную и общие помещения к началу недели.</p></div></article>
+      <article class="card case-card"><div class="case-strip"></div><div class="case-body"><h3>Коттедж перед приездом гостей</h3><div class="case-facts"><div class="case-fact"><span>Площадь</span><strong>220 м²</strong></div><div class="case-fact"><span>Время уборки</span><strong>7 часов</strong></div></div><p>Провели генеральную уборку комнат, кухни, лестницы и санузлов.</p></div></article>
+      <article class="card case-card"><div class="case-strip"></div><div class="case-body"><h3>Химчистка углового дивана и ковролина</h3><div class="case-facts"><div class="case-fact"><span>Площадь</span><strong>45 м²</strong></div><div class="case-fact"><span>Время уборки</span><strong>3 часа</strong></div></div><p>Очистили обивку и ковролин, обработали зоны с устойчивым запахом.</p></div></article>
+    </div>
+    <p class="note">Примеры оформления карточек. Наполним реальными объектами и фотографиями из вашего архива.</p>
+  </div>
+</section>
+<section class="s s--navy" id="obekty">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Объекты, которые мы обслуживаем</h2><p class="s__lead">Работаем с жилыми, коммерческими и производственными помещениями.</p></div>
+    <div class="chips">
+      <span class="object-chip">Торговые сети</span><span class="object-chip">Офисные помещения</span>
+      <span class="object-chip">Торговые и развлекательные центры</span><span class="object-chip">Автосалоны</span>
+      <span class="object-chip">Производственные цеха</span><span class="object-chip">Склады</span>
+      <span class="object-chip">Подземные паркинги</span><span class="object-chip">Спортивные комплексы</span>
+      <span class="object-chip">Квартиры</span><span class="object-chip">Коттеджи и дома</span>
+      <span class="object-chip">АЗС</span><span class="object-chip">Фасады и витрины</span>
+    </div>
+  </div>
+</section>
+<section class="s s--white" id="otzyvy">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Что пишут о нас клиенты</h2><p class="s__lead">Оценки компании на популярных городских площадках.</p></div>
+    <div class="rating-badges">
+      <div class="card rating-badge"><strong>Flamp 5.0</strong><span class="stars" aria-label="5 из 5">★★★★★</span><a href="#">Смотреть все отзывы</a></div>
+      <div class="card rating-badge"><strong>Яндекс 5.0</strong><span class="stars" aria-label="5 из 5">★★★★★</span><a href="#">Смотреть все отзывы</a></div>
+    </div>
+    <div class="grid reviews-grid">
+      <article class="card review-card"><span class="platform">Flamp</span><div class="review-head"><div class="review-avatar">ИМ</div><div><p class="review-name">Ирина М.</p><span class="review-date">14.02.2026</span></div></div><div class="stars" aria-label="5 из 5">★★★★★</div><p>Заказывали уборку после ремонта в двухкомнатной квартире. Строительную пыль убрали даже с верхних полок, окна и рамы отмыли аккуратно. Менеджер присылал фото по ходу работы.</p></article>
+      <article class="card review-card"><span class="platform">Яндекс Карты</span><div class="review-head"><div class="review-avatar">АП</div><div><p class="review-name">Алексей П.</p><span class="review-date">03.04.2026</span></div></div><div class="stars" aria-label="5 из 5">★★★★★</div><p>Нужна была генеральная уборка офиса перед рабочей неделей. Приехали ночью, утром помещение было готово. Сумма осталась такой, как посчитали после осмотра.</p></article>
+      <article class="card review-card"><span class="platform">2ГИС</span><div class="review-head"><div class="review-avatar">НС</div><div><p class="review-name">Наталья С.</p><span class="review-date">27.06.2026</span></div></div><div class="stars" aria-label="5 из 5">★★★★★</div><p>Сделали химчистку углового дивана. Отдельно попросила обработать место с запахом, добавили дезодорацию. Диван после работы оставили аккуратно сохнуть.</p></article>
+    </div>
+    <p class="note">Тексты показаны для примера. На рабочем сайте блок подтянет живые отзывы с Яндекс Карт, 2ГИС и Flamp по API.</p>
+  </div>
+</section>
+<section class="s s--blue" id="kak-rabotaem">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Как мы работаем</h2><p class="s__lead">Четыре понятных шага от заявки до приёмки.</p></div>
+    <div class="steps">
+      <article class="step"><span class="step__num">1</span><h3>Заявка и выезд</h3><p>Принимаем заявку и бесплатно выезжаем на объект для оценки.</p></article>
+      <article class="step"><span class="step__num">2</span><h3>Смета</h3><p>Составляем смету и фиксируем цену до начала работ.</p></article>
+      <article class="step"><span class="step__num">3</span><h3>Уборка</h3><p>Менеджер контролирует работу и отправляет фото и видео отчёт в реальном времени.</p></article>
+      <article class="step"><span class="step__num">4</span><h3>Приёмка</h3><p>Заказчик принимает выполненную уборку по чек-листу.</p></article>
+    </div>
+  </div>
+</section>
+<section class="s s--white" id="pochemu">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Почему выбирают нас</h2><p class="s__lead">Практичные условия для квартиры, офиса и коммерческого объекта.</p></div>
+    <div class="grid why-grid">
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Часы"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 9v8l5 3" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Работаем круглосуточно</h3><p>Принимаем заявки и выходим на объекты 24 часа, 7 дней в неделю.</p></article>
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Лупа"><circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20 7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Бесплатная оценка</h3><p>Выезд специалиста и оценка объёма работ всегда бесплатны.</p></article>
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Ценник"><path d="M4 15 15 4h12v12L16 27 4 15Zm17-5h.1" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Фиксируем цену</h3><p>Согласовываем смету до начала работ, сумма остаётся понятной.</p></article>
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Камера"><rect x="4" y="9" width="24" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="17.5" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 9 2-4h8l2 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Отчёт с объекта</h3><p>Менеджер остаётся на месте и отправляет фото и видео в реальном времени.</p></article>
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Щит с отметкой"><path d="M16 3 27 7v8c0 7-4 11-11 14C9 26 5 22 5 15V7l11-4Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 16 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Опытные клинеры</h3><p>Опыт от 3 лет, гражданство РФ и прописка в Екатеринбурге.</p></article>
+      <article class="card why-card"><span class="icon-box"><svg viewBox="0 0 32 32" role="img" aria-label="Уборочная машина"><path d="M5 23h20l3 4H9l-4-4Zm4 0 3-12h10l3 12M14 11V6h6v5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>Своя техника</h3><p>Используем собственные средства и более 20 единиц профессиональной техники.</p></article>
+    </div>
+  </div>
+</section>
+<section class="s s--blue" id="faq">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Частые вопросы</h2><p class="s__lead">Коротко отвечаем на вопросы перед заказом.</p></div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>От чего зависит стоимость услуг?</summary><div class="faq-answer"><p>Стоимость зависит от площади, состояния объекта и состава работ. Специалист бесплатно выезжает на объект, после оценки мы фиксируем цену до начала уборки.</p></div></details>
+      <details class="faq-item"><summary>Нужно ли мне находиться на объекте во время уборки?</summary><div class="faq-answer"><p>Нет, мы можем забрать ключи в любой точке Екатеринбурга. Менеджер будет на объекте и отправит фото и видео отчёт в реальном времени.</p></div></details>
+      <details class="faq-item"><summary>Кто будет контролировать работу на объекте?</summary><div class="faq-answer"><p>Менеджер находится на объекте в течение всей уборки. Он распределяет зоны между клинерами и контролирует выполнение чек-листа.</p></div></details>
+      <details class="faq-item"><summary>Вы гарантируете качество услуг?</summary><div class="faq-answer"><p>Работу контролирует менеджер на объекте, а результат принимается по чек-листу. Фото и видео отчёт позволяет видеть ход уборки в реальном времени.</p></div></details>
+      <details class="faq-item"><summary>Какой персонал у вас работает?</summary><div class="faq-answer"><p>Клинеры являются гражданами РФ, зарегистрированы в Екатеринбурге и имеют опыт от 3 лет. Каждый сотрудник отвечает за свою зону.</p></div></details>
+    </div>
+  </div>
+</section>
+<section class="s s--navy" id="zayavka">
+  <div class="container cta-wrap">
+    <h2 class="s__title">Рассчитаем стоимость бесплатно</h2>
+    <p class="s__lead">Выезд оценщика по Екатеринбургу и области, расчёт в день обращения.</p>
+    <form class="cta-form demo-form"><div class="form-row"><input class="field" type="tel" aria-label="Номер телефона" placeholder="+7 900 000 00 00" required><button class="btn btn--red" type="submit">Оставить заявку</button></div></form>
+    <a class="cta-phone" href="tel:+73433510995">+7 343 351 09 95</a>
+  </div>
+</section>
+<section class="s s--white" id="kontakty">
+  <div class="container">
+    <div class="s__head"><h2 class="s__title">Контакты</h2><p class="s__lead">Свяжитесь удобным способом или приезжайте в офис.</p></div>
+    <div class="grid contacts-grid">
+      <article class="card contact-card"><h3>Телефоны</h3><a href="tel:+73433510995">+7 343 351 09 95</a><a href="tel:+79644883260">+7 964 488 32 60</a></article>
+      <article class="card contact-card"><h3>Почта и адрес</h3><a href="mailto:krcleaning@mail.ru">krcleaning@mail.ru</a><p>Екатеринбург, ул. Московская 198</p></article>
+      <article class="card contact-card"><h3>Режим работы</h3><p>24 часа, 7 дней в неделю</p></article>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <a class="logo footer-logo" href="#hero" aria-label="KR Cleaning, на главную">
+          <svg class="logo__mark" viewBox="0 0 54 54" role="img" aria-label="Логотип KR Cleaning"><rect x="2" y="2" width="50" height="50" rx="11" fill="var(--navy-900)" stroke="var(--red)" stroke-width="2"/><text x="11" y="31" fill="var(--red)" font-family="Montserrat" font-size="24" font-weight="800">K</text><text x="28" y="31" fill="var(--white)" font-family="Montserrat" font-size="24" font-weight="800">R</text><text x="9" y="44" fill="var(--red)" font-family="Montserrat" font-size="7" font-weight="700" letter-spacing=".2em">CLEANING</text></svg>
+          <span class="logo__word"><span class="logo__kr">KR</span> <span class="logo__cleaning">cleaning</span></span>
+        </a>
+        <nav class="footer-links" aria-label="Навигация в подвале"><a href="#hero">Главная</a><a href="#uslugi">Все услуги</a><a href="#ceny">Цены</a><a href="#calc">Калькулятор</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a><a href="#faq">Вопросы</a><a href="#zayavka">Заявка</a></nav>
+        <div class="messengers"><a class="messenger" href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" role="img" aria-label="Telegram"><path d="m3 11 17-7-4 16-5-5-3 3 1-5 7-6-9 5-4-1Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a><a class="messenger" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" role="img" aria-label="WhatsApp"><path d="M20 11.5a8 8 0 0 1-12 7l-4 1 1-4a8 8 0 1 1 15-4Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8c1 4 3 6 7 7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
+      </div>
+      <p class="copyright">© 2013-2026 KR Cleaning, клининговая компания в Екатеринбурге</p>
+    </div>
+  </footer>
+</section>
+</main>
+<!-- aggregateRating намеренно не выводится: Google не принимает рейтинги, собранные с внешних площадок, для собственного бизнеса. Подключим после сбора отзывов на своём домене. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "KR Cleaning",
+  "url": "https://krcleaning.ru",
+  "areaServed": "Екатеринбург",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Московская, 198",
+    "addressLocality": "Екатеринбург"
+  },
+  "telephone": ["+7 343 351 09 95", "+7 964 488 32 60"],
+  "email": "krcleaning@mail.ru",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "foundingDate": "2013",
+  "priceRange": "₽₽"
+}
+</script>
+<script>
+  function initNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+    const close = (restoreFocus) => {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+      if (restoreFocus) toggle.focus();
+    };
+    toggle.addEventListener('click', () => {
+      const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      menu.hidden = !willOpen;
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => close(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !menu.hidden) close(true);
+    });
+  }
+
+  function initTabs() {
+    document.querySelectorAll('[data-tabs]').forEach(root => {
+      const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+      const activate = (tab, focus) => {
+        tabs.forEach(item => {
+          const active = item === tab;
+          item.setAttribute('aria-selected', String(active));
+          item.tabIndex = active ? 0 : -1;
+          const panel = document.getElementById(item.getAttribute('aria-controls'));
+          if (panel) panel.hidden = !active;
+        });
+        if (focus) tab.focus();
+      };
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activate(tab, false));
+        tab.addEventListener('keydown', event => {
+          let next = index;
+          if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          activate(tabs[next], true);
+        });
+      });
+    });
+  }
+
+  function initCalc() {
+    const calc = document.getElementById('calc');
+    if (!calc) return;
+    const area = document.getElementById('area-range');
+    const areaValue = document.getElementById('area-value');
+    const totalNode = document.getElementById('calc-total');
+    const minimumNote = document.getElementById('minimum-note');
+    const repairNote = document.getElementById('repair-note');
+    const windowsBox = document.getElementById('addon-windows');
+    const windowCount = document.getElementById('window-count');
+    const typeButtons = Array.from(calc.querySelectorAll('[data-calc-group="type"] .segment'));
+    const objectButtons = Array.from(calc.querySelectorAll('[data-calc-group="object"] .segment'));
+    let type = 'general';
+    let object = 'flat';
+    const select = (buttons, selected) => buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.value === selected)));
+    const rateFor = square => {
+      if (type === 'daily') return 120;
+      if (type === 'general') return { flat: 450, cottage: 500, office: 400 }[object];
+      if (square <= 100) return 550;
+      if (square <= 150) return 500;
+      if (square <= 200) return 490;
+      if (square <= 300) return 480;
+      return 450;
+    };
+    const format = value => new Intl.NumberFormat('ru-RU').format(value).replace(/\u202f/g, '\u00a0');
+    const update = () => {
+      const square = Number(area.value);
+      areaValue.textContent = String(square);
+      windowCount.disabled = !windowsBox.checked;
+      let addons = 0;
+      if (windowsBox.checked) {
+        const count = Math.min(20, Math.max(1, Number(windowCount.value) || 1));
+        windowCount.value = String(count);
+        addons += count * 750;
+      }
+      if (document.getElementById('addon-odor').checked) addons += 500;
+      if (document.getElementById('addon-condition').checked) addons += 500;
+      if (document.getElementById('addon-waste').checked) addons += 6000;
+      const computed = rateFor(square) * square + addons;
+      const minimumApplies = type === 'general' && computed < 15000;
+      totalNode.textContent = format(minimumApplies ? 15000 : computed);
+      minimumNote.hidden = !minimumApplies;
+    };
+    typeButtons.forEach(button => button.addEventListener('click', () => {
+      type = button.dataset.value;
+      select(typeButtons, type);
+      const daily = type === 'daily';
+      const repair = type === 'repair';
+      repairNote.hidden = !repair;
+      objectButtons.forEach(item => item.disabled = daily);
+      if (daily) {
+        object = 'office';
+        select(objectButtons, object);
+      }
+      update();
+    }));
+    objectButtons.forEach(button => button.addEventListener('click', () => {
+      if (button.disabled) return;
+      object = button.dataset.value;
+      select(objectButtons, object);
+      update();
+    }));
+    calc.addEventListener('input', update);
+    update();
+  }
+
+  function initZones() {
+    const checklist = document.getElementById('zone-checklist');
+    if (!checklist) return;
+    const content = {
+      kitchen: ['Кухня', 'Обезжиривание фасадов гарнитура', 'Мытьё варочной панели и фартука', 'Чистка вытяжки', 'Мытьё техники снаружи', 'Мойка раковины и смесителя', 'Полы и плинтусы', 'Вынос мусора'],
+      bath: ['Ванная', 'Чистка и дезинфекция ванны и раковины', 'Чистка и дезинфекция унитаза', 'Отмывание кафеля', 'Полировка кранов', 'Мытьё и полировка зеркал', 'Полы и плинтусы'],
+      rooms: ['Комнаты', 'Обеспыливание стен и потолков', 'Мытьё люстр и светильников', 'Горизонтальные и вертикальные поверхности', 'Вакуумная чистка мягкой мебели и ковров', 'Зеркала и стекло', 'Полы и плинтусы'],
+      hall: ['Прихожая', 'Мытьё дверей и дверных блоков', 'Шкафы снаружи', 'Зеркала', 'Обувные полки', 'Полы, плинтусы и порог']
+    };
+    const groups = Array.from(document.querySelectorAll('.floor-zone'));
+    const pills = Array.from(document.querySelectorAll('.zone-pill'));
+    const show = key => {
+      groups.forEach(group => group.classList.toggle('is-active', group.dataset.zone === key));
+      pills.forEach(pill => pill.setAttribute('aria-pressed', String(pill.dataset.zone === key)));
+      const [title, ...items] = content[key];
+      checklist.innerHTML = '<h3>' + title + '</h3><ul class="check-list">' + items.map(item => '<li><svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Включено"><path d="m5 12 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>' + item + '</li>').join('') + '</ul>';
+    };
+    groups.forEach(group => {
+      group.addEventListener('click', () => show(group.dataset.zone));
+      group.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          show(group.dataset.zone);
+        }
+      });
+    });
+    pills.forEach(pill => pill.addEventListener('click', () => show(pill.dataset.zone)));
+  }
+
+  function initSlider() {
+    const box = document.getElementById('compare');
+    const before = document.getElementById('compare-before');
+    const handle = document.getElementById('compare-handle');
+    if (!box || !before || !handle) return;
+    let value = 50;
+    const render = next => {
+      value = Math.min(100, Math.max(0, next));
+      before.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0)';
+      handle.style.left = value + '%';
+      handle.setAttribute('aria-valuenow', String(Math.round(value)));
+    };
+    const fromPointer = event => {
+      const rect = box.getBoundingClientRect();
+      render((event.clientX - rect.left) / rect.width * 100);
+    };
+    handle.addEventListener('pointerdown', event => {
+      handle.setPointerCapture(event.pointerId);
+      fromPointer(event);
+    });
+    handle.addEventListener('pointermove', event => {
+      if (handle.hasPointerCapture(event.pointerId)) fromPointer(event);
+    });
+    handle.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      render(value + (event.key === 'ArrowLeft' ? -2 : 2));
+    });
+    render(50);
+  }
+  function initFaq() {
+    const items = Array.from(document.querySelectorAll('.faq-item'));
+    items.forEach(item => {
+      const summary = item.querySelector('summary');
+      summary.setAttribute('aria-expanded', String(item.open));
+      item.addEventListener('toggle', () => {
+        summary.setAttribute('aria-expanded', String(item.open));
+        if (item.open) items.forEach(other => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  }
+
+  function initForms() {
+    document.querySelectorAll('.demo-form').forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const status = document.createElement('div');
+        status.className = 'form-status';
+        status.setAttribute('role', 'status');
+        status.textContent = 'Заявка принята. Это демонстрация формы, на рабочем сайте она уйдёт менеджеру и в CRM.';
+        form.replaceWith(status);
+        status.focus();
+      });
+    });
+  }
+
+  function init() {
+    initNav();
+    initTabs();
+    initCalc();
+    initZones();
+    initSlider();
+    initFaq();
+    initForms();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
