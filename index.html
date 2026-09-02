@@ -8,6 +8,7 @@
   <!-- noindex, nofollow удаляется при публикации рабочего сайта. -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Open+Sans:wght@400;600;700&amp;display=swap">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E21C21'/%3E%3Ctext x='32' y='44' font-family='Montserrat,sans-serif' font-size='30' font-weight='800' fill='%23FFFFFF' text-anchor='middle'%3EKR%3C/text%3E%3C/svg%3E">
   <style>
     /* topbar, siteheader, hero, stats, napravleniya, uslugi, ceny, calc, chto-vhodit, klinery, do-posle, keysy, obekty, otzyvy, kak-rabotaem, pochemu, faq, zayavka, kontakty */
     :root {
@@ -100,7 +101,7 @@
     .services-grid { grid-template-columns: 1fr; margin-top: 22px; }
     .service-card { display: flex; min-height: 220px; flex-direction: column; align-items: flex-start; padding: 20px; }
     .service-card h3 { margin: 16px 0 8px; } .service-price { margin-bottom: 18px; color: var(--navy-700); font-weight: 800; }
-    .more-link { margin-top: auto; color: var(--red); font-weight: 700; } .more-link:hover { color: var(--red-700); }
+    .more-link { display: inline-flex; align-items: center; min-height: 44px; padding-block: 12px; margin-top: auto; color: var(--red); font-weight: 700; } .more-link:hover { color: var(--red-700); }
     .price-wrap { margin-top: 22px; } .price-table { width: 100%; border-collapse: collapse; }
     .price-table thead { display: none; } .price-table tbody { display: grid; gap: 10px; }
     .price-table tr { display: grid; min-width: 0; gap: 6px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; background: var(--white); }
@@ -119,20 +120,22 @@
     .segment { min-height: 44px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px; cursor: pointer; color: var(--navy-700); background: var(--white); font-size: 13px; font-weight: 700; }
     .segment[aria-pressed="true"] { border-color: var(--navy-700); color: var(--white); background: var(--navy-700); }
     .segment:disabled { cursor: not-allowed; opacity: .55; } .range-value { color: var(--red); }
-    .range-input { width: 100%; accent-color: var(--red); }
+    .range-input { width: 100%; height: 44px; margin-block: 0; padding: 0; background: transparent; cursor: pointer; accent-color: var(--red); }
+    .range-input::-webkit-slider-thumb { width: 26px; height: 26px; }
+    .range-input::-moz-range-thumb { width: 26px; height: 26px; }
     .range-captions { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
     .addon-list { display: grid; gap: 12px; }
-    .addon-row { display: grid; min-width: 0; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; }
-    .addon-row input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--red); }
+    .addon-row { display: grid; min-width: 0; min-height: 44px; padding-block: 6px; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; cursor: pointer; }
+    .addon-row input[type="checkbox"] { width: 22px; height: 22px; margin: 0; accent-color: var(--red); cursor: pointer; }
     .addon-row input[type="number"] { grid-column: 2; width: 86px; min-height: 44px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 10px; color: var(--text); background: var(--white); font-size: 16px; }
     .calc-kicker { margin-bottom: 8px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .12em; }
     .calc-total { margin-bottom: 10px; color: var(--navy-700); font-family: Montserrat, sans-serif; font-size: clamp(30px, 8vw, 42px); font-weight: 800; line-height: 1.1; }
     .minimum-note { margin-bottom: 14px; color: var(--red); font-weight: 700; }
     .floor-grid { display: grid; gap: 24px; } .floor-board { min-width: 0; border-radius: var(--radius); padding: 12px; background: var(--bg-soft); }
     .floor-plan { width: 100%; height: auto; } .floor-zone { cursor: pointer; }
-    .floor-zone rect { fill: var(--white); stroke: var(--navy-700); stroke-width: 1.5; transition: fill var(--duration) var(--ease-smooth), stroke var(--duration) var(--ease-smooth); }
+    .floor-zone .zone-bg { fill: var(--white); stroke: var(--navy-700); stroke-width: 1.5; transition: fill var(--duration) var(--ease-smooth), stroke var(--duration) var(--ease-smooth); }
     .floor-zone text { fill: var(--navy-700); font: 700 11px Montserrat, sans-serif; pointer-events: none; }
-    .floor-zone.is-active rect { fill: rgba(226, 28, 33, .12); stroke: var(--red); }
+    .floor-zone.is-active .zone-bg { fill: rgba(226, 28, 33, .12); stroke: var(--red); }
     .floor-pills { display: flex; max-width: 100%; gap: 6px; overflow-x: auto; padding-top: 12px; }
     .zone-pill { min-height: 44px; flex: 0 0 auto; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 8px 14px; cursor: pointer; color: var(--navy-700); background: var(--white); font-weight: 700; }
     .zone-pill[aria-pressed="true"] { border-color: var(--red); color: var(--red); }
@@ -145,13 +148,9 @@
     .hiring-rule { margin-top: 18px; color: var(--muted); font-size: 12px; }
     .compare { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; touch-action: none; user-select: none; }
     .compare__layer { position: absolute; inset: 0; }
-    .compare__after { background: linear-gradient(135deg, var(--white), var(--bg-blue)); }
-    .compare__before { background: linear-gradient(135deg, var(--grime-1), var(--grime-2)); clip-path: inset(0 50% 0 0); }
-    .smudge { position: absolute; border-radius: 50%; background: rgba(32, 53, 102, .22); }
-    .smudge--one { width: 22%; height: 18%; left: 12%; top: 18%; transform: rotate(12deg); }
-    .smudge--two { width: 30%; height: 12%; left: 35%; top: 58%; transform: rotate(-8deg); }
-    .smudge--three { width: 14%; height: 25%; left: 72%; top: 22%; transform: rotate(18deg); }
-    .shine { position: absolute; width: 8%; height: 90%; left: 62%; top: 5%; transform: rotate(18deg); background: rgba(255, 255, 255, .7); }
+    .compare__layer svg { display: block; width: 100%; height: 100%; }
+    .compare__after { background: var(--bg-soft); }
+    .compare__before { background: var(--grime-2); clip-path: inset(0 50% 0 0); }
     .compare__handle { position: absolute; z-index: 4; width: 44px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); cursor: ew-resize; touch-action: none; }
     .compare__handle::before { position: absolute; width: 4px; height: 100%; left: 50%; top: 0; content: ""; transform: translateX(-50%); background: var(--white); }
     .compare__knob { position: absolute; display: grid; width: 40px; height: 40px; left: 50%; top: 50%; place-items: center; border-radius: 50%; transform: translate(-50%, -50%); color: var(--red); background: var(--white); box-shadow: var(--shadow-soft); }
@@ -159,10 +158,13 @@
     .compare__label { position: absolute; z-index: 3; top: 14px; border-radius: var(--radius-pill); padding: 6px 12px; color: var(--white); font-weight: 700; }
     .compare__label--before { left: 14px; background: var(--navy-700); } .compare__label--after { right: 14px; background: var(--red); }
     .caption { margin-top: 10px; color: var(--muted); font-size: 11px; }
-    .cases-grid { grid-template-columns: 1fr; } .case-card { overflow: hidden; }
-    .case-strip { height: 8px; background: linear-gradient(90deg, var(--navy-700), var(--blue-600)); }
-    .case-body { padding: 20px; } .case-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .cases-grid { grid-template-columns: 1fr; align-items: stretch; }
+    .case-card { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+    .case-strip { height: 8px; flex: 0 0 8px; background: linear-gradient(90deg, var(--navy-700), var(--blue-600)); }
+    .case-body { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+    .case-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
     .case-fact span { display: block; color: var(--muted); font-size: 11px; } .case-fact strong { color: var(--navy-700); }
+    .case-body p { margin-top: auto; margin-bottom: 0; }
     .chips { display: grid; grid-template-columns: 1fr; gap: 10px; }
     .object-chip { display: flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--navy-500); border-radius: var(--radius-pill); padding: 8px 14px; color: var(--white); text-align: center; transition: border-color var(--duration-fast) var(--ease-smooth); }
     .object-chip:hover { border-color: var(--red); }
@@ -202,6 +204,7 @@
     .copyright { margin: 26px 0 0; border-top: 1px solid var(--navy-500); padding-top: 18px; color: var(--border); font-size: 12px; }
     @media (min-width: 640px) {
       :root { --section-pad: 76px; } [id="topbar"] { display: block; } .topbar__inner { display: flex; }
+      .more-link { min-height: 0; padding-block: 0; }
       .form-row { grid-template-columns: minmax(0, 1fr) auto; } .rating-chips { grid-template-columns: repeat(3, 1fr); }
       .services-grid, .cleaners-grid, .cases-grid, .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .segments { grid-template-columns: repeat(3, 1fr); } .addon-row { grid-template-columns: 24px minmax(0, 1fr) auto; }
@@ -279,9 +282,16 @@
     </div>
     <div class="hero__visual">
       <svg class="hero__bubbles" viewBox="0 0 500 420" aria-hidden="true">
-        <circle cx="70" cy="90" r="40" fill="var(--blue-600)" opacity=".08"/><circle cx="420" cy="70" r="58" fill="var(--navy-700)" opacity=".1"/>
-        <circle cx="380" cy="340" r="70" fill="var(--blue-600)" opacity=".14"/><circle cx="120" cy="330" r="28" fill="var(--navy-700)" opacity=".1"/>
-        <circle cx="250" cy="45" r="18" fill="none" stroke="var(--red)" stroke-width="3"/>
+        <circle cx="70" cy="80" r="55" fill="var(--blue-600)" opacity=".08"/>
+        <circle cx="430" cy="70" r="75" fill="var(--navy-700)" opacity=".07"/>
+        <circle cx="440" cy="290" r="100" fill="var(--blue-600)" opacity=".09"/>
+        <circle cx="80" cy="330" r="45" fill="var(--navy-700)" opacity=".08"/>
+        <circle cx="260" cy="40" r="55" fill="var(--blue-600)" opacity=".06"/>
+        <circle cx="30" cy="200" r="35" fill="var(--blue-600)" opacity=".10"/>
+        <circle cx="470" cy="180" r="28" fill="var(--navy-700)" opacity=".11"/>
+        <circle cx="180" cy="380" r="24" fill="var(--blue-600)" opacity=".08"/>
+        <circle cx="120" cy="60" r="20" fill="none" stroke="var(--red)" stroke-width="1.5" opacity=".22"/>
+        <circle cx="390" cy="180" r="30" fill="none" stroke="var(--red)" stroke-width="1.5" opacity=".20"/>
       </svg>
       <div class="card rating-card">
         <div class="rating-row"><span>Flamp 5.0</span><span class="stars" aria-label="5 из 5">★★★★★</span></div>
@@ -487,10 +497,60 @@
     <div class="floor-grid">
       <div class="floor-board">
         <svg class="floor-plan" viewBox="0 0 520 360" role="img" aria-label="Интерактивный план квартиры с четырьмя зонами">
-          <g class="floor-zone is-active" data-zone="kitchen" role="button" tabindex="0" aria-label="Кухня"><rect x="20" y="20" width="230" height="145" rx="5"/><text x="40" y="52">Кухня</text></g>
-          <g class="floor-zone" data-zone="bath" role="button" tabindex="0" aria-label="Ванная"><rect x="270" y="20" width="230" height="105" rx="5"/><text x="290" y="52">Ванная</text></g>
-          <g class="floor-zone" data-zone="rooms" role="button" tabindex="0" aria-label="Комнаты"><rect x="20" y="185" width="320" height="155" rx="5"/><text x="40" y="217">Комнаты</text></g>
-          <g class="floor-zone" data-zone="hall" role="button" tabindex="0" aria-label="Прихожая"><rect x="360" y="145" width="140" height="195" rx="5"/><text x="380" y="177">Прихожая</text></g>
+          <g class="floor-zone is-active" data-zone="kitchen" role="button" tabindex="0" aria-label="Кухня">
+            <rect class="zone-bg" x="20" y="20" width="240" height="140"/>
+            <path d="M 35 75 V 32 H 210 V 62" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="65" cy="47" r="10" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="65" cy="47" r="2.5" fill="var(--navy-500)" pointer-events="none"/>
+            <rect x="135" y="35" width="30" height="24" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="142" cy="41" r="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="158" cy="41" r="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="142" cy="53" r="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="158" cy="53" r="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <text x="40" y="115">Кухня</text>
+          </g>
+          <g class="floor-zone" data-zone="bath" role="button" tabindex="0" aria-label="Ванная">
+            <rect class="zone-bg" x="260" y="20" width="240" height="120"/>
+            <rect x="420" y="30" width="70" height="40" rx="8" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="480" cy="50" r="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <rect x="275" y="30" width="20" height="12" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <path d="M 277 42 C 277 56 293 56 293 42 Z" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <rect x="330" y="30" width="30" height="20" rx="5" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="345" cy="40" r="2" fill="var(--navy-500)" pointer-events="none"/>
+            <text x="280" y="105">Ванная</text>
+          </g>
+          <g class="floor-zone" data-zone="rooms" role="button" tabindex="0" aria-label="Комнаты">
+            <rect class="zone-bg" x="20" y="160" width="290" height="180"/>
+            <rect x="35" y="210" width="105" height="110" rx="3" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="35" y1="240" x2="140" y2="240" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <rect x="43" y="218" width="38" height="16" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <rect x="94" y="218" width="38" height="16" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <rect x="175" y="300" width="120" height="30" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="235" y1="300" x2="235" y2="330" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="195" y1="315" x2="215" y2="315" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="255" y1="315" x2="275" y2="315" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <text x="40" y="195">Комнаты</text>
+          </g>
+          <g class="floor-zone" data-zone="hall" role="button" tabindex="0" aria-label="Прихожая">
+            <path class="zone-bg" d="M 260 140 H 500 V 340 H 310 V 160 H 260 Z"/>
+            <rect x="420" y="270" width="70" height="26" rx="2" fill="none" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="420" y1="279" x2="490" y2="279" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="420" y1="288" x2="490" y2="288" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <line x1="420" y1="215" x2="490" y2="215" stroke="var(--navy-500)" stroke-width="1" pointer-events="none"/>
+            <circle cx="435" cy="215" r="2.5" fill="var(--navy-500)" pointer-events="none"/>
+            <circle cx="455" cy="215" r="2.5" fill="var(--navy-500)" pointer-events="none"/>
+            <circle cx="475" cy="215" r="2.5" fill="var(--navy-500)" pointer-events="none"/>
+            <text x="350" y="195">Прихожая</text>
+          </g>
+          <line x1="260" y1="20" x2="260" y2="140" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="20" y1="160" x2="260" y2="160" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="260" y1="160" x2="270" y2="160" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="300" y1="160" x2="310" y2="160" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="260" y1="140" x2="350" y2="140" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="390" y1="140" x2="500" y2="140" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="310" y1="160" x2="310" y2="230" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <line x1="310" y1="270" x2="310" y2="340" stroke="var(--navy-700)" stroke-width="1.5" pointer-events="none"/>
+          <rect x="20" y="20" width="480" height="320" fill="none" stroke="var(--navy-700)" stroke-width="2.5" pointer-events="none"/>
         </svg>
         <div class="floor-pills" aria-label="Выбор зоны">
           <button class="zone-pill" type="button" data-zone="kitchen" aria-pressed="true">Кухня</button>
@@ -531,8 +591,78 @@
   <div class="container">
     <div class="s__head"><h2 class="s__title">До и после уборки</h2><p class="s__lead">Передвигайте разделитель, чтобы сравнить результат.</p></div>
     <div class="compare" id="compare">
-      <div class="compare__layer compare__after"><span class="shine"></span></div>
-      <div class="compare__layer compare__before" id="compare-before"><span class="smudge smudge--one"></span><span class="smudge smudge--two"></span><span class="smudge smudge--three"></span></div>
+      <div class="compare__layer compare__after">
+        <svg viewBox="0 0 800 450" width="100%" height="100%" aria-hidden="true">
+          <rect x="0" y="0" width="800" height="315" fill="var(--bg-soft)"/>
+          <rect x="0" y="315" width="800" height="135" fill="var(--bg-blue)"/>
+          <rect x="0" y="307" width="800" height="8" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="500" y="45" width="230" height="190" rx="3" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="512" y="57" width="98" height="78" rx="2" fill="var(--bg-blue)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="620" y="57" width="98" height="78" rx="2" fill="var(--bg-blue)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="512" y="145" width="98" height="78" rx="2" fill="var(--bg-blue)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="620" y="145" width="98" height="78" rx="2" fill="var(--bg-blue)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <polygon points="535,57 575,57 512,135 512,95" fill="var(--white)" opacity=".65"/>
+          <polygon points="645,57 685,57 570,223 530,223" fill="var(--white)" opacity=".55"/>
+          <rect x="490" y="235" width="250" height="8" rx="2" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="130" y="300" width="12" height="18" rx="2" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="348" y="300" width="12" height="18" rx="2" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="120" y="205" width="250" height="95" rx="10" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="120" y="255" width="250" height="45" rx="6" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <line x1="245" y1="255" x2="245" y2="300" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="105" y="230" width="30" height="70" rx="6" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="355" y="230" width="30" height="70" rx="6" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="415" y="297" width="8" height="38" rx="2" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="507" y="297" width="8" height="38" rx="2" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="400" y="285" width="130" height="12" rx="3" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="50" y="325" width="40" height="8" rx="3" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <rect x="68" y="130" width="4" height="195" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <polygon points="50,180 90,180 82,130 58,130" fill="var(--white)" stroke="var(--navy-700)" stroke-width="1.5"/>
+          <path d="M 720 50 Q 720 62 732 62 Q 720 62 720 74 Q 720 62 708 62 Q 720 62 720 50 Z" fill="var(--red)"/>
+          <path d="M 480 340 Q 480 348 488 348 Q 480 348 480 356 Q 480 348 472 348 Q 480 348 480 340 Z" fill="var(--red)"/>
+          <path d="M 170 355 Q 170 365 180 365 Q 170 365 170 375 Q 170 365 160 365 Q 170 365 170 355 Z" fill="var(--red)"/>
+        </svg>
+      </div>
+      <div class="compare__layer compare__before" id="compare-before">
+        <svg viewBox="0 0 800 450" width="100%" height="100%" aria-hidden="true">
+          <rect x="0" y="0" width="800" height="315" fill="var(--grime-2)"/>
+          <rect x="0" y="315" width="800" height="135" fill="var(--grime-1)"/>
+          <rect x="0" y="307" width="800" height="8" fill="var(--grime-1)" stroke="var(--grime-2)" stroke-width="1.5"/>
+          <rect x="500" y="45" width="230" height="190" rx="3" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="512" y="57" width="98" height="78" rx="2" fill="var(--grime-1)" stroke="var(--grime-2)" stroke-width="1.5"/>
+          <rect x="620" y="57" width="98" height="78" rx="2" fill="var(--grime-1)" stroke="var(--grime-2)" stroke-width="1.5"/>
+          <rect x="512" y="145" width="98" height="78" rx="2" fill="var(--grime-1)" stroke="var(--grime-2)" stroke-width="1.5"/>
+          <rect x="620" y="145" width="98" height="78" rx="2" fill="var(--grime-1)" stroke="var(--grime-2)" stroke-width="1.5"/>
+          <rect x="490" y="235" width="250" height="8" rx="2" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="130" y="300" width="12" height="18" rx="2" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="348" y="300" width="12" height="18" rx="2" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="120" y="205" width="250" height="95" rx="10" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="120" y="255" width="250" height="45" rx="6" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <line x1="245" y1="255" x2="245" y2="300" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="105" y="230" width="30" height="70" rx="6" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="355" y="230" width="30" height="70" rx="6" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="415" y="297" width="8" height="38" rx="2" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="507" y="297" width="8" height="38" rx="2" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="400" y="285" width="130" height="12" rx="3" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="50" y="325" width="40" height="8" rx="3" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <rect x="68" y="130" width="4" height="195" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <polygon points="50,180 90,180 82,130 58,130" fill="var(--grime-2)" stroke="var(--grime-1)" stroke-width="1.5"/>
+          <path d="M 525 70 Q 560 60 585 85 Q 590 110 560 115 Q 530 118 525 90 Z" fill="var(--navy-900)" opacity=".30"/>
+          <ellipse cx="670" cy="95" rx="28" ry="18" fill="var(--navy-900)" opacity=".35"/>
+          <path d="M 635 160 Q 665 150 695 170 Q 705 195 675 208 Q 645 212 630 188 Z" fill="var(--navy-900)" opacity=".38"/>
+          <path d="M 180 345 Q 230 335 270 355 Q 290 375 250 385 Q 200 380 175 365 Z" fill="var(--navy-900)" opacity=".28"/>
+          <ellipse cx="475" cy="370" rx="65" ry="18" fill="var(--navy-900)" opacity=".32"/>
+          <ellipse cx="680" cy="390" rx="55" ry="16" fill="var(--navy-900)" opacity=".34"/>
+          <path d="M 270 270 Q 300 265 320 280 Q 315 298 285 294 Z" fill="var(--navy-900)" opacity=".25"/>
+          <circle cx="210" cy="340" r="2.5" fill="var(--navy-900)" opacity=".35"/>
+          <circle cx="225" cy="355" r="2" fill="var(--navy-900)" opacity=".3"/>
+          <circle cx="430" cy="360" r="3" fill="var(--navy-900)" opacity=".35"/>
+          <circle cx="450" cy="385" r="2" fill="var(--navy-900)" opacity=".3"/>
+          <circle cx="610" cy="350" r="2.5" fill="var(--navy-900)" opacity=".35"/>
+          <circle cx="630" cy="375" r="2" fill="var(--navy-900)" opacity=".3"/>
+          <circle cx="530" cy="180" r="2" fill="var(--navy-900)" opacity=".3"/>
+          <circle cx="650" cy="80" r="2" fill="var(--navy-900)" opacity=".3"/>
+        </svg>
+      </div>
       <span class="compare__label compare__label--before">До</span><span class="compare__label compare__label--after">После</span>
       <div class="compare__handle" id="compare-handle" role="slider" tabindex="0" aria-label="Сравнение до и после" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
         <span class="compare__knob"><svg viewBox="0 0 24 24" role="img" aria-label="Двигать влево и вправо"><path d="m9 7-5 5 5 5m6-10 5 5-5 5M4 12h16" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
